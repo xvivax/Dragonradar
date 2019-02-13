@@ -106,7 +106,6 @@ public class DBallDraw implements Runnable
 
     public void playMusic()
     {
-        mediaPlayer = MediaPlayer.create(activity, R.raw.demo);
         mediaPlayer.start();
     }
 
