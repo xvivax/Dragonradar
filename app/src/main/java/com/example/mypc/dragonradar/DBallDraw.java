@@ -6,6 +6,8 @@ import android.graphics.drawable.AnimationDrawable;
 import android.media.Image;
 import android.media.MediaPlayer;
 import android.media.browse.MediaBrowser;
+import android.net.Uri;
+import android.os.Debug;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.Log;
@@ -18,6 +20,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -37,20 +40,19 @@ public class DBallDraw implements Runnable
     private float passAlpha;
     private MediaPlayer mediaPlayer;
 
-    private Object mPauseLock;
-    private boolean mPaused;
+    private LatLng pos1 = new LatLng(54.800532,25.414260);
+    private LatLng pos2 = new LatLng(54.798419,25.407121);
+    private LatLng pos3 = new LatLng(54.798092,25.405475);
+    private LatLng pos4 = new LatLng(54.799574,25.404955);
+    private LatLng pos5 = new LatLng(54.799001,25.402865);
+    private LatLng pos6 = new LatLng(54.799361,25.405003);
+    private LatLng pos7 = new LatLng(54.799338,25.404736);
+    private LatLng pos8 = new LatLng(54.754739, 25.26594);
+    private LatLng pos9 = new LatLng(54.754163, 25.264574);
+    private LatLng pos10 = new LatLng(54.754229, 25.266919);
 
 
-    LatLng pos1 = new LatLng(54.800532,25.414260);
-    LatLng pos2 = new LatLng(54.798419,25.407121);
-    LatLng pos3 = new LatLng(54.798092,25.405475);
-    LatLng pos4 = new LatLng(54.799574,25.404955);
-    LatLng pos5 = new LatLng(54.799001,25.402865);
-    LatLng pos6 = new LatLng(54.799361,25.405003);
-    LatLng pos7 = new LatLng(54.799338,25.404736);
-    LatLng pos8 = new LatLng(54.754739, 25.26594);
-    LatLng pos9 = new LatLng(54.754163, 25.264574);
-    LatLng pos10 = new LatLng(54.754229, 25.266919);
+    private boolean playing;
 
     DBallDraw(Activity a, GoogleMap map)
     {
@@ -58,11 +60,11 @@ public class DBallDraw implements Runnable
         handler = new Handler();
         my_map = map;
 
-        mPauseLock = new Object();
-
         mediaPlayer = MediaPlayer.create(activity, R.raw.demo);
 
         addPos();
+
+        playing = true;
     }
 
     long start = SystemClock.uptimeMillis();
@@ -77,7 +79,11 @@ public class DBallDraw implements Runnable
         {
             if (transperancy >= 1)
             {
-                playMusic();
+                if (playing)
+                {
+                    mediaPlayer.start();
+                }
+
                 transperancy = 0.0f;
             }
             activity.runOnUiThread(new Runnable()
@@ -95,18 +101,11 @@ public class DBallDraw implements Runnable
         start = SystemClock.uptimeMillis();
 
         handler.postDelayed(this, speed * 100);
-
     }
 
-    public void stopMusic()
+    public void PlaySound(boolean isPlaying)
     {
-        mediaPlayer.stop();
-        mediaPlayer.release();
-    }
-
-    public void playMusic()
-    {
-        mediaPlayer.start();
+        playing = isPlaying;
     }
 
     private void addPos()

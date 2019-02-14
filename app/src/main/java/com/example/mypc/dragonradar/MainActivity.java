@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         thread.start();
 
         cheats = new Cheats(this, m_map);
-        cheats.disableButtons();
+        cheats.enableButtons();
     }
 
     @Override
@@ -156,6 +156,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         {
             startLocationUpdates();
         }
+
+        if (dBallDraw != null)
+        {
+            dBallDraw.PlaySound(true);
+        }
+
     }
 
     @Override
@@ -164,10 +170,32 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         stopLocationUpdates();
         if (thread != null)
         {
-            dBallDraw.stopMusic();
+            dBallDraw.PlaySound(false);
+            mapReady = false;
             Thread m = thread;
             thread = null;
             m.interrupt();
+        }
+    }
+
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        if (dBallDraw != null)
+        {
+            dBallDraw.PlaySound(false);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+
+        super.onDestroy();
+
+        if (dBallDraw != null)
+        {
+            dBallDraw.PlaySound(false);
         }
     }
 
