@@ -40,17 +40,16 @@ public class DBallDraw implements Runnable
     private float passAlpha;
     private MediaPlayer mediaPlayer;
 
-    private LatLng pos1 = new LatLng(54.800532,25.414260);
-    private LatLng pos2 = new LatLng(54.798419,25.407121);
-    private LatLng pos3 = new LatLng(54.798092,25.405475);
-    private LatLng pos4 = new LatLng(54.799574,25.404955);
-    private LatLng pos5 = new LatLng(54.799001,25.402865);
-    private LatLng pos6 = new LatLng(54.799361,25.405003);
-    private LatLng pos7 = new LatLng(54.799338,25.404736);
-    private LatLng pos8 = new LatLng(54.754739, 25.26594);
-    private LatLng pos9 = new LatLng(54.754163, 25.264574);
-    private LatLng pos10 = new LatLng(54.754229, 25.266919);
-
+    private LatLng pos1 = new LatLng(54.717951,25.295662);
+    private LatLng pos2 = new LatLng(54.716598,25.280144);
+    private LatLng pos3 = new LatLng(54.710520,25.261985);
+    private LatLng pos4 = new LatLng(54.703075,25.264140);
+    private LatLng pos5 = new LatLng(54.686910,25.259489);
+    private LatLng pos6 = new LatLng(54.685783,25.260214);
+    private LatLng pos7 = new LatLng(54.685946,25.259600);
+    private LatLng pos8 = new LatLng(54.686083, 25.257166);
+    private LatLng pos9 = new LatLng(54.712475, 25.302109);
+    private LatLng pos10 = new LatLng(54.719181, 25.301463);
 
     private boolean playing;
 
