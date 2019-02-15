@@ -14,6 +14,8 @@ package com.example.mypc.dragonradar;
         import android.provider.Settings;
         import android.support.annotation.NonNull;
         import android.support.v4.app.ActivityCompat;
+        import android.support.v4.app.FragmentActivity;
+        import android.support.v4.app.FragmentManager;
         import android.support.v7.app.AlertDialog;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -44,6 +46,7 @@ package com.example.mypc.dragonradar;
         import com.google.android.gms.maps.GoogleMap;
         import com.google.android.gms.maps.MapFragment;
         import com.google.android.gms.maps.OnMapReadyCallback;
+        import com.google.android.gms.maps.SupportMapFragment;
         import com.google.android.gms.maps.model.BitmapDescriptorFactory;
         import com.google.android.gms.maps.model.CameraPosition;
         import com.google.android.gms.maps.model.GroundOverlay;
@@ -96,7 +99,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             locationUpdates();
 
-            MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.maps);
+
+
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps);
             mapFragment.getMapAsync(this);
 
         }
