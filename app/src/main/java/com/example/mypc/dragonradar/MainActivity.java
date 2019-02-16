@@ -6,6 +6,7 @@ package com.example.mypc.dragonradar;
         import android.content.Intent;
         import android.content.IntentSender;
         import android.content.pm.PackageManager;
+        import android.graphics.Color;
         import android.graphics.drawable.AnimationDrawable;
         import android.location.Location;
         import android.location.LocationManager;
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private int PERMISSION_CODE = 1;
 
     private TextView locationText;
+    private TextView calibrateText;
     private LatLng myLoc = null;
 
     // GPS variables definition
@@ -96,6 +98,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
             locationText = findViewById(R.id.locText);
+            locationText.setTextColor(Color.WHITE);
+            locationText.setVisibility(View.INVISIBLE);
+            calibrateText = findViewById(R.id.calibrateLabel);
+            calibrateText.setTextSize(30);
+            calibrateText.setTextColor(Color.WHITE);
+            calibrateText.setText("Calibrating GPS position...");
 
             locationUpdates();
 
@@ -144,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         thread.start();
 
         cheats = new Cheats(this, m_map);
-        cheats.disableButtons();
+        cheats.enableButtons();
     }
 
     @Override
@@ -235,6 +243,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     //Update UI with location data
                     if (location != null)
                     {
+                        calibrateText.setVisibility(View.INVISIBLE);
                         myLoc = new LatLng(location.getLatitude(), location.getLongitude());
                         if (mapReady)
                         {
@@ -245,7 +254,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
 
                             locationText.setText("Latitude: " + Math.round(location.getLatitude() * 100000) / 100000.0 + "\nLongtitude: " + Math.round(location.getLongitude() * 100000) / 100000.0);
+                            locationText.setVisibility(View.VISIBLE);
                         }
+                    }
+                    else
+                    {
+                        //calibrating text
+                        calibrateText.setVisibility(View.VISIBLE);
                     }
                 }
             }

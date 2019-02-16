@@ -40,7 +40,7 @@ public class DBallDraw implements Runnable
     private float passAlpha;
     private MediaPlayer mediaPlayer;
 
-    /*
+
     // Mano kordinates
     private LatLng pos1 = new LatLng(54.717951,25.295662);
     private LatLng pos2 = new LatLng(54.716598,25.280144);
@@ -52,9 +52,10 @@ public class DBallDraw implements Runnable
     private LatLng pos8 = new LatLng(54.686083, 25.257166);
     private LatLng pos9 = new LatLng(54.712475, 25.302109);
     private LatLng pos10 = new LatLng(54.719181, 25.301463);
-    */
+
 
     // Juliaus kordinates
+    /*
     private LatLng pos1 = new LatLng(54.677229,24.927827);
     private LatLng pos2 = new LatLng(54.677834,24.927389);
     private LatLng pos3 = new LatLng(54.678231,24.927337);
@@ -62,6 +63,7 @@ public class DBallDraw implements Runnable
     private LatLng pos5 = new LatLng(54.677941,24.927679);
     private LatLng pos6 = new LatLng(54.676211,24.928173);
     private LatLng pos7 = new LatLng(54.676203,24.927672);
+    */
 
     private boolean playing;
 
@@ -121,7 +123,7 @@ public class DBallDraw implements Runnable
 
     private void addPos()
     {
-        positions.add(my_map.addMarker(new MarkerOptions().position(new LatLng(54.71800, 25.297690)).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
+        //positions.add(my_map.addMarker(new MarkerOptions().position(new LatLng(54.71800, 25.297690)).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos1).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos2).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos3).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
@@ -129,11 +131,11 @@ public class DBallDraw implements Runnable
         positions.add(my_map.addMarker(new MarkerOptions().position(pos5).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos6).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos7).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        /*
+
         positions.add(my_map.addMarker(new MarkerOptions().position(pos8).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos9).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos10).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        */
+
 
     }
 
