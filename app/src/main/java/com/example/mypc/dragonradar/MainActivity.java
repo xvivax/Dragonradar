@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         thread.start();
 
         cheats = new Cheats(this, m_map);
-        cheats.enableButtons();
+        cheats.disableButtons();
     }
 
     @Override
