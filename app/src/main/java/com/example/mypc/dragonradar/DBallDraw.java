@@ -41,6 +41,9 @@ public class DBallDraw implements Runnable
     private MediaPlayer mediaPlayer;
 
 
+    //Riga ball
+    private LatLng pos0 = new LatLng(56.956832,24.105190);
+
     // Mano kordinates
     private LatLng pos1 = new LatLng(54.717951,25.295662);
     private LatLng pos2 = new LatLng(54.716598,25.280144);
@@ -123,7 +126,9 @@ public class DBallDraw implements Runnable
 
     private void addPos()
     {
-        //positions.add(my_map.addMarker(new MarkerOptions().position(new LatLng(54.71800, 25.297690)).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
+        //Riga pos
+        positions.add(my_map.addMarker(new MarkerOptions().position(pos0).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
+
         positions.add(my_map.addMarker(new MarkerOptions().position(pos1).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos2).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos3).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
@@ -131,7 +136,6 @@ public class DBallDraw implements Runnable
         positions.add(my_map.addMarker(new MarkerOptions().position(pos5).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos6).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos7).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-
         positions.add(my_map.addMarker(new MarkerOptions().position(pos8).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos9).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos10).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));

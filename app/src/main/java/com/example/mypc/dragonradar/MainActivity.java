@@ -94,6 +94,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         {
             setContentView(R.layout.activity_main);
 
+            GetLocationPermission();
+
             // Screen won't turn off automatically
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
@@ -106,8 +108,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             calibrateText.setText("Calibrating GPS position...");
 
             locationUpdates();
-
-
 
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.maps);
             mapFragment.getMapAsync(this);
@@ -128,9 +128,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         m_map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
         // For testing
-        //m_map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        m_map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
-        LatLng loc = new LatLng(54.717995, 25.294198);
+        //Riga location
+        LatLng loc = new LatLng(56.957050, 24.105712);
 
         // Initialize myGroundOverlay
         myGroundOverlay = m_map.addGroundOverlay(new GroundOverlayOptions()
@@ -265,6 +266,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         };
+    }
+
+    private void GetLocationPermission()
+    {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
+            {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSION_CODE);
+            }
+        }
     }
 
     private void startLocationUpdates()
