@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         m_map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
         // For testing
-        m_map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        //m_map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         //Riga location
         LatLng loc = new LatLng(56.957050, 24.105712);
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         thread.start();
 
         cheats = new Cheats(this, m_map);
-        cheats.enableButtons();
+        cheats.disableButtons();
     }
 
     @Override
