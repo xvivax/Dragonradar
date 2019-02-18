@@ -25,6 +25,9 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyCOC9Y3ceFpmOwYX_5LzDhiqZxSCidk9oQ" />
 
+        <uses-library android:name="org.apache.http.legacy"
+            android:required="false"/>
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
