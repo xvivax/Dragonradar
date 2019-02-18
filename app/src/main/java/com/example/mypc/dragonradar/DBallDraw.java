@@ -61,11 +61,11 @@ public class DBallDraw implements Runnable
     /*
     private LatLng pos1 = new LatLng(54.677229,24.927827);
     private LatLng pos2 = new LatLng(54.677834,24.927389);
-    private LatLng pos3 = new LatLng(54.678231,24.927337);
+    private LatLng pos3 = new LatLng(54.6771306,24.9272372);
     private LatLng pos4 = new LatLng(54.677834,24.927389);
     private LatLng pos5 = new LatLng(54.677941,24.927679);
     private LatLng pos6 = new LatLng(54.676211,24.928173);
-    private LatLng pos7 = new LatLng(54.676203,24.927672);
+    private LatLng pos7 = new LatLng(54.6774898,24.9276677);
     */
 
     private boolean playing;
