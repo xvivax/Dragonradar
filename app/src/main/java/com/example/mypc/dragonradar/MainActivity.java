@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         if (thread != null)
         {
             dBallDraw.PlaySound(false);
-            mapReady = false;
+            //mapReady = false;
             Thread m = thread;
             thread = null;
             m.interrupt();
@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     {
                         calibrateText.setVisibility(View.INVISIBLE);
                         myLoc = new LatLng(location.getLatitude(), location.getLongitude());
-                        if (mapReady)
+                        if(mapReady)
                         {
                             myMarker.setPosition(myLoc);
                             myGroundOverlay.setPosition(myLoc);
