@@ -61,13 +61,13 @@ public class DBallDraw implements Runnable
 
     // Juliaus kordinates
 
-    private LatLng pos1 = new LatLng(54.677229,24.927827);
-    private LatLng pos2 = new LatLng(54.677834,24.927389);
+    private LatLng pos1 = new LatLng(54.676211,24.928173);
+    private LatLng pos2 = new LatLng(54.676208,24.927711);
     private LatLng pos3 = new LatLng(54.6771306,24.9272372);
-    private LatLng pos4 = new LatLng(54.677834,24.927389);
-    private LatLng pos5 = new LatLng(54.677941,24.927679);
-    private LatLng pos6 = new LatLng(54.676211,24.928173);
-    private LatLng pos7 = new LatLng(54.6774898,24.9276677);
+    private LatLng pos4 = new LatLng(54.6774898,24.9276677);
+    private LatLng pos5 = new LatLng(54.677834,24.927389);
+    private LatLng pos6 = new LatLng(54.678231,24.927337);
+    private LatLng pos7 = new LatLng(54.677941,24.927679);
 
 
     private boolean playing;
@@ -138,13 +138,11 @@ public class DBallDraw implements Runnable
         positions.add(my_map.addMarker(new MarkerOptions().position(pos5).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos6).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos7).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-
         /*
         positions.add(my_map.addMarker(new MarkerOptions().position(pos8).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos9).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos10).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         */
-
     }
 
     private void changeAlpha(float alpha)
