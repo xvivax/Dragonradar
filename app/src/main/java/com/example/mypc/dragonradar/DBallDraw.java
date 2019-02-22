@@ -44,7 +44,7 @@ public class DBallDraw implements Runnable
     //Riga ball
     private LatLng pos0 = new LatLng(56.956832,24.105190);
 
-    /*
+
     // Mano kordinates
     private LatLng pos1 = new LatLng(54.717951,25.295662);
     private LatLng pos2 = new LatLng(54.716598,25.280144);
@@ -56,11 +56,11 @@ public class DBallDraw implements Runnable
     private LatLng pos8 = new LatLng(54.686083, 25.257166);
     private LatLng pos9 = new LatLng(54.712475, 25.302109);
     private LatLng pos10 = new LatLng(54.719181, 25.301463);
-    */
+
 
 
     // Juliaus kordinates
-
+    /*
     private LatLng pos1 = new LatLng(54.676211,24.928173);
     private LatLng pos2 = new LatLng(54.676208,24.927711);
     private LatLng pos3 = new LatLng(54.6771306,24.9272372);
@@ -68,7 +68,7 @@ public class DBallDraw implements Runnable
     private LatLng pos5 = new LatLng(54.677834,24.927389);
     private LatLng pos6 = new LatLng(54.678231,24.927337);
     private LatLng pos7 = new LatLng(54.677941,24.927679);
-
+    */
 
     private boolean playing;
 
