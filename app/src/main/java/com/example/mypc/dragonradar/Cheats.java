@@ -16,7 +16,6 @@ public class Cheats
     private Button btnMap0 = null;
     private Button btnMap1 = null;
     private Button btnMap2 = null;
-    private Button location_butt = null;
 
 
     Cheats(Activity a, GoogleMap map)
@@ -37,7 +36,6 @@ public class Cheats
         button0();
         button1();
         button2();
-        location_button();
     }
 
     private void buttonFunc()
@@ -74,18 +72,6 @@ public class Cheats
             }
         });
 
-        //Locations
-        location_butt = activity.findViewById(R.id.locations_button);
-        location_butt.setOnClickListener(new View.OnClickListener()
-        {
-
-            @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(activity, locations.class);
-                activity.startActivity(intent);
-            }
-        });
     }
 
     private void button0()
@@ -109,14 +95,6 @@ public class Cheats
         if (btnMap2 != null)
         {
             btnMap2.setVisibility(View.INVISIBLE);
-        }
-    }
-
-    private void location_button()
-    {
-        if (location_butt != null)
-        {
-            location_butt.setVisibility(View.INVISIBLE);
         }
     }
 }

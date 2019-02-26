@@ -40,13 +40,19 @@ public class DBallDraw implements Runnable
     private float passAlpha;
     private MediaPlayer mediaPlayer;
 
+    //Security
+    private Info info;
+
 
     //Riga ball
     private LatLng pos0 = new LatLng(56.956832,24.105190);
 
 
     // Mano kordinates
-    private LatLng pos1 = new LatLng(54.717951,25.295662);
+    private double v = 54.717827;
+    private double v2 = 25.296134;
+
+    private LatLng pos1 = new LatLng(v,v2);
     private LatLng pos2 = new LatLng(54.716598,25.280144);
     private LatLng pos3 = new LatLng(54.710520,25.261985);
     private LatLng pos4 = new LatLng(54.703075,25.264140);
@@ -58,6 +64,7 @@ public class DBallDraw implements Runnable
     private LatLng pos10 = new LatLng(54.719181, 25.301463);
 
 
+    private LatLng[] position;
 
     // Juliaus kordinates
     /*
@@ -80,7 +87,11 @@ public class DBallDraw implements Runnable
 
         mediaPlayer = MediaPlayer.create(activity, R.raw.demo);
 
-        addPos();
+        info = new Info();
+        position = new LatLng[info.pos.length];
+        SetPosition();
+        AddPosOnMap();
+        //addPos();
 
         playing = true;
     }
@@ -145,11 +156,27 @@ public class DBallDraw implements Runnable
         */
     }
 
+    private void AddPosOnMap()
+    {
+        for (int i = 0; i < position.length; i++)
+        {
+            positions.add(my_map.addMarker(new MarkerOptions().position(position[i]).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
+        }
+    }
+
     private void changeAlpha(float alpha)
     {
         for (int i = 0; i < positions.size(); i++)
         {
             positions.get(i).setAlpha(alpha);
+        }
+    }
+
+    private void SetPosition()
+    {
+        for (int i = 0; i < info.pos.length; i++)
+        {
+            position[i] = new LatLng(info.pos[i].GetLat(), info.pos[i].GetLng());
         }
     }
 }
