@@ -6,18 +6,16 @@ import android.util.Log;
 public class Info
 {
     public LocHolder[] pos;
-    private String[] posNums =
+
+    private String[] julEncNums =
             {
-                    "54.717827", "25.296134",
-                    "54.716598", "25.280144",
-                    "54.710520", "25.261985",
-                    "54.703075", "25.264140",
-                    "54.686910", "25.259489",
-                    "54.685783", "25.260214",
-                    "54.685946", "25.259600",
-                    "54.686083", "25.257166",
-                    "54.712475", "25.302109",
-                    "54.719181", "25.301463"
+                    "BQQeBgcGAgEB", "AgQeCQIIAQcD",
+                    "BQQeBgcGAgAI", "AgQeCQIHBwEB",
+                    "BQQeBgcHAQMABg==", "AgQeCQIHAgMHAg==",
+                    "BQQeBgcHBAgJCA==", "AgQeCQIHBgYHBw==",
+                    "BQQeBgcHCAME", "AgQeCQIHAwgJ",
+                    "BQQeBgcIAgMB", "AgQeCQIHAwMH",
+                    "BQQeBgcHCQQB", "AgQeCQIHBgcJ"
             };
 
     private String[] myEncNums =
@@ -36,31 +34,8 @@ public class Info
 
     public Info()
     {
-        pos = new LocHolder[posNums.length / 2];
-
-        String[] encStringArr = encryptDoubles(posNums);
-
-        /*
-        for (int i = 0; i < encStringArr.length; i++)
-        {
-            Log.d("m9", encStringArr[i]);
-        }
-        */
-        Positions(decDoubles(myEncNums));
-        ShowDebug();
-    }
-
-    // for testing
-    public String[] encryptDoubles(String[] nums)
-    {
-        String[] encString = new String[nums.length];
-
-        for (int j=0; j< nums.length; j++)
-        {
-            encString[j] = encode(nums[j], "0");
-        }
-
-        return encString;
+        pos = new LocHolder[julEncNums.length / 2];
+        Positions(decDoubles(julEncNums));
     }
 
     public Double[] decDoubles(String[] nums)

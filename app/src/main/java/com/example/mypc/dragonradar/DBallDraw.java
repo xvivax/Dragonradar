@@ -40,35 +40,9 @@ public class DBallDraw implements Runnable
     private float passAlpha;
     private MediaPlayer mediaPlayer;
 
-    //Security
     private Info info;
 
-
-    // Mano kordinates
-    private LatLng pos1 = new LatLng(54.717827,25.296134);
-    private LatLng pos2 = new LatLng(54.716598,25.280144);
-    private LatLng pos3 = new LatLng(54.710520,25.261985);
-    private LatLng pos4 = new LatLng(54.703075,25.264140);
-    private LatLng pos5 = new LatLng(54.686910,25.259489);
-    private LatLng pos6 = new LatLng(54.685783,25.260214);
-    private LatLng pos7 = new LatLng(54.685946,25.259600);
-    private LatLng pos8 = new LatLng(54.686083, 25.257166);
-    private LatLng pos9 = new LatLng(54.712475, 25.302109);
-    private LatLng pos10 = new LatLng(54.719181, 25.301463);
-
-
     private LatLng[] position;
-
-    // Juliaus kordinates
-    /*
-    private LatLng pos1 = new LatLng(54.676211,24.928173);
-    private LatLng pos2 = new LatLng(54.676208,24.927711);
-    private LatLng pos3 = new LatLng(54.6771306,24.9272372);
-    private LatLng pos4 = new LatLng(54.6774898,24.9276677);
-    private LatLng pos5 = new LatLng(54.677834,24.927389);
-    private LatLng pos6 = new LatLng(54.678231,24.927337);
-    private LatLng pos7 = new LatLng(54.677941,24.927679);
-    */
 
     private boolean playing;
 
@@ -84,7 +58,6 @@ public class DBallDraw implements Runnable
         position = new LatLng[info.pos.length];
         SetPosition();
         AddPosOnMap();
-        //addPos();
 
         playing = true;
     }
@@ -128,22 +101,6 @@ public class DBallDraw implements Runnable
     public void PlaySound(boolean isPlaying)
     {
         playing = isPlaying;
-    }
-
-    private void addPos()
-    {
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos1).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos2).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos3).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos4).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos5).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos6).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos7).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        /*
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos8).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos9).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos10).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-        */
     }
 
     private void AddPosOnMap()
