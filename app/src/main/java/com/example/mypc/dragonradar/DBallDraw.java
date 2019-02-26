@@ -44,15 +44,8 @@ public class DBallDraw implements Runnable
     private Info info;
 
 
-    //Riga ball
-    private LatLng pos0 = new LatLng(56.956832,24.105190);
-
-
     // Mano kordinates
-    private double v = 54.717827;
-    private double v2 = 25.296134;
-
-    private LatLng pos1 = new LatLng(v,v2);
+    private LatLng pos1 = new LatLng(54.717827,25.296134);
     private LatLng pos2 = new LatLng(54.716598,25.280144);
     private LatLng pos3 = new LatLng(54.710520,25.261985);
     private LatLng pos4 = new LatLng(54.703075,25.264140);
@@ -139,9 +132,6 @@ public class DBallDraw implements Runnable
 
     private void addPos()
     {
-        //Riga pos
-        positions.add(my_map.addMarker(new MarkerOptions().position(pos0).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
-
         positions.add(my_map.addMarker(new MarkerOptions().position(pos1).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos2).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));
         positions.add(my_map.addMarker(new MarkerOptions().position(pos3).alpha(transperancy).icon(BitmapDescriptorFactory.fromResource(R.drawable.db))));

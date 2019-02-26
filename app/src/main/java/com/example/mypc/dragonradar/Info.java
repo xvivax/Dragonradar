@@ -10,14 +10,28 @@ public class Info
             {
                     "54.717827", "25.296134",
                     "54.716598", "25.280144",
-                    "54.710520", "25.261985"
+                    "54.710520", "25.261985",
+                    "54.703075", "25.264140",
+                    "54.686910", "25.259489",
+                    "54.685783", "25.260214",
+                    "54.685946", "25.259600",
+                    "54.686083", "25.257166",
+                    "54.712475", "25.302109",
+                    "54.719181", "25.301463"
             };
 
-    private String[] encNums =
+    private String[] myEncNums =
             {
                     "BQQeBwEHCAIH", "AgUeAgkGAQME",
                     "BQQeBwEGBQkI", "AgUeAggAAQQE",
-                    "BQQeBwEABQIA", "AgUeAgYBCQgF"
+                    "BQQeBwEABQIA", "AgUeAgYBCQgF",
+                    "BQQeBwADAAcF", "AgUeAgYEAQQA",
+                    "BQQeBggGCQEA", "AgUeAgUJBAgJ",
+                    "BQQeBggFBwgD", "AgUeAgYAAgEE",
+                    "BQQeBggFCQQG", "AgUeAgUJBgAA",
+                    "BQQeBggGAAgD", "AgUeAgUHAQYG",
+                    "BQQeBwECBAcF", "AgUeAwACAQAJ",
+                    "BQQeBwEJAQgB", "AgUeAwABBAYD"
             };
 
     public Info()
@@ -26,12 +40,13 @@ public class Info
 
         String[] encStringArr = encryptDoubles(posNums);
 
+        /*
         for (int i = 0; i < encStringArr.length; i++)
         {
             Log.d("m9", encStringArr[i]);
         }
-
-        Positions(decDoubles(encNums));
+        */
+        Positions(decDoubles(myEncNums));
         ShowDebug();
     }
 
